@@ -10,7 +10,7 @@ document.getElementById("getWeatherBtn").addEventListener("click", function() {
     fetch(url)
         .then(response => {
             if (!response.ok) {
-                throw new Error("City not found.");
+                throw new Error("Місто не знайдено");
             }
             return response.json();
         })
