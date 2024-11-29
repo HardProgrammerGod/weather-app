@@ -1,7 +1,7 @@
 document.getElementById("getWeatherBtn").addEventListener("click", function() {
     const city = document.getElementById("cityInput").value;
     if (!city) {
-        alert("Please enter a city name.");
+        alert("Впишіть назву міста");
         return;
     }
     const apiKey = "!!!"; // - сюда берем свой токен
