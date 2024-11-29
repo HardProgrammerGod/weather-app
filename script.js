@@ -4,7 +4,7 @@ document.getElementById("getWeatherBtn").addEventListener("click", function() {
         alert("Please enter a city name.");
         return;
     }
-    const apiKey = "52cdd1d744f7e94e6b6122a8d8f98635";
+    const apiKey = "!!!";
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
 
     fetch(url)
