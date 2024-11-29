@@ -4,7 +4,7 @@ document.getElementById("getWeatherBtn").addEventListener("click", function() {
         alert("Please enter a city name.");
         return;
     }
-    const apiKey = "!!!";
+    const apiKey = "!!!"; // - сюда берем свой токен
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
 
     fetch(url)
