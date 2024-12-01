@@ -50,3 +50,32 @@ button:hover {
     font-size: 18px;
     color: #333; 
 }
+
+.spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    color: #007BFF; 
+    margin-top: 20px;
+}
+
+.spinner::after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    border: 3px solid #007BFF; 
+    border-top: 3px solid #A9A9A9; 
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-left: 10px; 
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
