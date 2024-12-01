@@ -1,16 +1,30 @@
+const loadingSpinner = document.getElementById("loading");
+
+function showSpinner() {
+    loadingSpinner.style.display = "flex";
+}
+
+function hideSpinner() {
+    loadingSpinner.style.display = "none";
+}
+
+
+
 document.getElementById("getWeatherBtn").addEventListener("click", function() {
     const city = document.getElementById("cityInput").value;
     if (!city) {
-        alert("Впишіть назву міста");
+        alert("Please enter a city name.");
         return;
     }
-    const apiKey = "!!!"; // - сюда берем свой токен
+    const apiKey = "!!!"; // берем код апішкі
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+
+    showSpinner();
 
     fetch(url)
         .then(response => {
             if (!response.ok) {
-                throw new Error("Місто не знайдено");
+                throw new Error("City not found.");
             }
             return response.json();
         })
@@ -19,6 +33,10 @@ document.getElementById("getWeatherBtn").addEventListener("click", function() {
         })
         .catch(error => {
             document.getElementById("weatherInfo").innerHTML = `<p>${error.message}</p>`;
+        })
+        
+        .finally(() => {
+            hideSpinner();
         });
 });
 
